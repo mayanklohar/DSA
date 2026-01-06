@@ -9,6 +9,13 @@ class Node{
         data = val;
         next = NULL;
     }
+
+    ~Node(){
+if(next != NULL){
+            delete next;
+            next = NULL;
+        }   
+    }
 };
 
 class List{
@@ -22,7 +29,7 @@ class List{
     }
 
     void push_front(int val){
-        Node* newNode = new Node(val);
+      Node*  newNode = new Node(val);
         if(head == NULL){
             head = newNode;
             tail = newNode;
@@ -59,6 +66,14 @@ class List{
 
     }
 
+    ~List(){
+
+        cout<<"~List\n";
+        if(head != NULL){
+            delete head;
+            head = NULL;
+        }   
+    }
     void printList(){
         Node* temp = head;
         while(temp != NULL){
@@ -79,5 +94,6 @@ ll.push_back(4);
 ll.printList();
 ll.insert(5,1);
 ll.printList();
+   
 return 0;
 }
