@@ -106,6 +106,6 @@ ll.printList();
 ll.insert(5,1);
 ll.printList();
 ll.pop_front();
-ll.printList();
+   
 return 0;
 }
