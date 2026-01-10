@@ -79,6 +79,17 @@ class List{
         }
         return -1;
     }
+    
+    void pop_front(){
+        if(head == NULL){
+            cout<<"LL is empty\n";
+            return;
+        }
+        Node* temp = head;
+        head = head->next;  
+        temp->next = NULL;
+        delete temp;
+    }
 
     ~List(){
 

@@ -66,6 +66,20 @@ class List{
 
     }
 
+    void searchItr(int key){
+        Node * temp=head;
+        int idx=0;
+        while(temp!=NULL){
+            if(temp->data==key){
+              
+                return idx;
+            }
+            temp=temp->next;
+            idx++;
+        }
+        return -1;
+    }
+
     ~List(){
 
         cout<<"~List\n";
@@ -75,16 +89,7 @@ class List{
         }   
     }
 
-    void pop_front(){
-        if(head == NULL){
-            cout<<"LL is empty\n";
-            return;
-        }
-        Node* temp = head;
-        head = head->next;  
-        temp->next = NULL;
-        delete temp;
-    }
+    
     void printList(){
         Node* temp = head;
         while(temp != NULL){
@@ -101,11 +106,9 @@ ll.push_front(2);
 ll.push_front(1);
 ll.printList();
 ll.push_back(4);
-
-ll.printList();
 ll.insert(5,1);
 ll.printList();
-ll.pop_front();
-   
+   ll.searchItr(5);
+ll.printList();
 return 0;
 }
