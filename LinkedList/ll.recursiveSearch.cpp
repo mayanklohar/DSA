@@ -56,7 +56,7 @@ class List{
 
         for(int i=0 ; i<pos-1 ; i++){
             if(temp==NULL){
-                cout<<"Position is invalid\n";
+                cout<<" Invalid\n";
                 return;
             }
             temp=temp->next;    
@@ -66,30 +66,9 @@ class List{
 
     }
 
-    int searchItr(int key){
-        Node * temp=head;
-        int idx=0;
-        while(temp!=NULL){
-            if(temp->data==key){
-              
-                return idx;
-            }
-            temp=temp->next;
-            idx++;
-        }
-        return -1;
-    }
     
-    void pop_front(){
-        if(head == NULL){
-            cout<<"LL is empty\n";
-            return;
-        }
-        Node* temp = head;
-        head = head->next;  
-        temp->next = NULL;
-        delete temp;
-    }
+    
+    
 
 int helper(Node* h, int key) {
     if (h == NULL) {
