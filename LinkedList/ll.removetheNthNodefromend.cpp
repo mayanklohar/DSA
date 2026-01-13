@@ -43,17 +43,43 @@ class List{
         }
     }
 
-    void reverse(){
-    Node*curr = head;
-    Node*prev = NULL;
-    tail=head;
-    while(curr!=NULL){
-        Node*next=curr->next;
-        curr->next=prev;
-        prev=curr;
-        curr=next;
+    void insert(int val,int pos){
+        Node *newNode = new Node(val);
+        Node *temp=head;
+
+        for(int i=0 ; i<pos-1 ; i++){
+            if(temp==NULL){
+                cout<<"Position is invalid\n";
+                return;
+            }
+            temp=temp->next;    
+        }
+        newNode->next=temp->next;
+        temp->next=newNode;
+
     }
-    head=prev;
+
+    int getsize(){
+        int sz=0;
+        Node* temp=head;
+        while(temp!=NULL){
+          
+            temp=temp->next;
+              sz++;
+    }
+        return sz;
+}
+
+void removeNth(int n){
+    int size=getsize();
+    Node *prev=head;
+    for(int i=1 ; i<size - n ; i++){
+        prev=prev->next;
+    }
+
+    Node *toDel= prev->next;
+    cout<<"going to delete "<<toDel->data<<endl;
+    prev->next=prev->next->next;
 }
 
     void printList(){
@@ -65,8 +91,6 @@ class List{
         cout << "NULL\n" ;
     }
 };
-
-
 int main(){
 List ll;
 ll.push_front(3);  
@@ -74,11 +98,11 @@ ll.push_front(2);
 ll.push_front(1);
 ll.printList();
 ll.push_back(4);
-ll.printList();
 
-ll.reverse();
-ll.printList(); 
+ll.insert(5,1);
+ll.printList();
+ll.removeNth(2);
+ll.printList();
 return 0;
 }
 
-// g++ LinkedList/ll.reverselist.cpp -o LinkedList/reverselist.exe
