@@ -80,17 +80,7 @@ class List{
         return -1;
     }
     
-    void pop_front(){
-        if(head == NULL){
-            cout<<"LL is empty\n";
-            return;
-        }
-        Node* temp = head;
-        head = head->next;  
-        temp->next = NULL;
-        delete temp;
-    }
-
+    
     ~List(){
 
         cout<<"~List\n";
@@ -119,7 +109,7 @@ ll.printList();
 ll.push_back(4);
 ll.insert(5,1);
 ll.printList();
-  cout<< ll.searchItr(5)<<endl;
+cout<< ll.searchItr(5)<<endl;
 
 return 0;
 }
