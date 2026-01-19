@@ -1,3 +1,4 @@
+// Basic structure of a linked list in C++
 #include<iostream>
 using namespace std;
 class Node{
