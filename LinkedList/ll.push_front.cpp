@@ -51,3 +51,8 @@ ll.push_front(1);
 ll.printList();
 return 0;
 }
+
+
+ /*Using dynamic allocation , Using new keywordwe can use the node in
+  main function even after the function closes . 
+ Dynamic allocation does not depend on function call.*/
