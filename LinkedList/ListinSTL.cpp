@@ -29,6 +29,5 @@ int main()
     ll.pop_front();
     printList(ll);
 
-    cout<<ll.size()<<endl;
     return 0;
 }
