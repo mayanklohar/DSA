@@ -41,7 +41,7 @@ while(fast!=NULL && fast->next!=NULL){
     slow=slow->next;
     fast=fast->next->next;
 }
-cout<<slow->data<<endl;
+cout<<"middle node is: "<< slow->data<<endl;
     }
 
     void printList(){
@@ -56,9 +56,12 @@ cout<<slow->data<<endl;
 
 int main(){
 List ll;
+ll.push_front(6);  
+ll.push_front(5);
 ll.push_front(3);  
 ll.push_front(2);  
 ll.push_front(1);
+
 ll.printList();
 
 ll.middleNode();
