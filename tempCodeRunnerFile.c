@@ -34,14 +34,14 @@ class List{
     }
 
 
-void middleNode() {
-   Node* slow=head;
-   Node* fast=head;    
-   while(fast!=NULL && fast->next!=NULL){
+    void middleNode() {
+Node* slow=head;
+Node* fast=head;    
+while(fast!=NULL && fast->next!=NULL){
     slow=slow->next;
     fast=fast->next->next;
-   }
-cout<<"middle node is: "<< slow->data<<endl;
+}
+cout<<slow->data<<endl;
     }
 
     void printList(){
@@ -56,12 +56,9 @@ cout<<"middle node is: "<< slow->data<<endl;
 
 int main(){
 List ll;
-ll.push_front(6);  
-ll.push_front(5);
 ll.push_front(3);  
 ll.push_front(2);  
 ll.push_front(1);
-
 ll.printList();
 
 ll.middleNode();
