@@ -1,7 +1,8 @@
-#include <iodstream>
+#include <iostream>
 using namespace std;    
 
 class Node{
+    public:
     int data;
     Node* next;
     Node* prev;
@@ -13,6 +14,7 @@ class Node{
 };
 
 class DoublyList{
+    public:
     Node* head;
     Node* tail;
 
@@ -35,7 +37,7 @@ class DoublyList{
     void printList(){
         Node* temp = head;
         while(temp!=NULL){
-            cout<<temp->data<<" <=>";
+            cout<<temp->data<<"<=>";
             temp = temp->next;
         }
         cout<<" NULL\n";
