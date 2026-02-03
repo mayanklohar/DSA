@@ -42,6 +42,7 @@ class DoublyList{
     }
     temp->next=NULL;
     delete temp;
+    cout<<"Front node deleted\n";
     }
 
     void printList(){
@@ -61,6 +62,7 @@ int main(){
     dbll.push_front(3);
     dbll.push_front(2);
     dbll.push_front(1);
+    dbll.push_front(0);
     dbll.printList();
 
     dbll.pop_front();
