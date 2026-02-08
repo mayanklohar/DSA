@@ -1,70 +1,45 @@
-#include <iostream>
-using namespace std;    
+#include<iostream>
+#include<vector>
+using namespace std;
 
-class Node{
+template<class T>
+
+class Stack{
+    vector<T>vec;
     public:
-    int data;
-    Node* next;
-    Node* prev;
+    void push(T val){
+        vec.push_back(val);
+    }
+    void pop(){
+        if(isEmpty()){
+            cout<<"Stack is empty\n";
+            return;
+        }
+        vec.pop_back();
+    
+    }
 
-    Node(int val){
-        data = val;
-         prev = next= NULL;
+    T top(){
+        
+        int lastIdx=vec.size()-1;
+        return vec[lastIdx];
+    }
+
+    bool isEmpty(){
+        return vec.size()==0;   
     }
 };
 
-class DoublyList{
-    public:
-    Node* head;
-    Node* tail;
 
-    DoublyList(){
-        head = tail = NULL;
-    }
-
-    void push_front(int val){
-        Node *newNode = new Node(val);
-        if(head==NULL){
-            head = tail = newNode;
+    int main(){
+        Stack <char>s;
+        s.push('c');
+        s.push('b');
+        s.push('a');
+        while(!s.isEmpty()){
+            cout<<s.top()<<endl;
+            s.pop();
         }
-        else{
-            newNode->next = head;
-            head->prev = newNode;
-            head = newNode; 
-        }
+        cout<<"Stack is now empty\n";
+       
     }
-
-    void pop_front(){
-    Node *temp = head;
-    head=head->next;
-    if(head!=NULL){
-        head->prev=NULL;
-    }
-    temp->next=NULL;
-    delete temp;
-    }
-
-    void printList(){
-        Node* temp = head;
-        while(temp!=NULL){
-            cout<<temp->data<<"<=>";
-            temp = temp->next;
-        }
-        cout<<" NULL\n";
-    }
-};
-
-int main(){
-    DoublyList dbll;
-
-    dbll.push_front(4);
-    dbll.push_front(3);
-    dbll.push_front(2);
-    dbll.push_front(1);
-    dbll.printList();
-
-    dbll.pop_front();
-    dbll.printList();
-
-    return 0;
-}

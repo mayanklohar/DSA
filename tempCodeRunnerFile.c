@@ -33,16 +33,16 @@ class List{
         }
     }
 
+    void mergeSort(Node* head){
+    if(head== NULL || head->next == NULL){
+        return;
+    }   
 
-    void middleNode() {
-Node* slow=head;
-Node* fast=head;    
-while(fast!=NULL && fast->next!=NULL){
-    slow=slow->next;
-    fast=fast->next->next;
+    Node *rightHead=splitAtMid(head);
+    mergeSort(head);
+    mergeSort(rightHead);
+    merge(head,rightHead);
 }
-cout<<slow->data<<endl;
-    }
 
     void printList(){
         Node* temp = head;
@@ -60,10 +60,10 @@ ll.push_front(3);
 ll.push_front(2);  
 ll.push_front(1);
 ll.printList();
-
-ll.middleNode();
 return 0;
 }
 
 
- 
+ /*Using dynamic allocation , Using new keywordwe can use the node in
+  main function even after the function closes . 
+ Dynamic allocation does not depend on function call.*/
