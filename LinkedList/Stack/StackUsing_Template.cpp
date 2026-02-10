@@ -43,3 +43,6 @@ class Stack{
         cout<<"Stack is now empty\n";
        
     }
+
+    //we do not write datatypes in stack<char> s;
+    //  because we have used template and we can use any datatype we want.
