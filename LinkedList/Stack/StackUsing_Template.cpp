@@ -41,6 +41,7 @@ class Stack{
             s.pop();
         }
         cout<<"Stack is now empty\n";
+        
        
     }
 
