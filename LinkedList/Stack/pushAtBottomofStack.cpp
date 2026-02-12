@@ -19,6 +19,7 @@ int main(){
     s.push(3);
 
     pushAtBottom(s,4);
+     pushAtBottom(s,10);
     while(!s.empty()){
         cout<<s.top()<<" ";
         s.pop();
