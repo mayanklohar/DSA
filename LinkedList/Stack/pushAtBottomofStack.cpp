@@ -28,3 +28,6 @@ int main(){
 
     return 0;
 }
+
+// Time Complexity: O(n) where n is the number of elements in the stack
+// Space Complexity: O(n) due to recursive call stack in the worst case when the stack
