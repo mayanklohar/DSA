@@ -31,3 +31,4 @@ int main(){
 
 // Time Complexity: O(n) where n is the number of elements in the stack
 // Space Complexity: O(n) due to recursive call stack in the worst case when the stack
+// is empty and we are pushing the new element at the bottom.
