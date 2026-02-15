@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<string>    
 using namespace std;
 
 template<class T>
@@ -32,10 +33,16 @@ class Stack{
 
 
     int main(){
-        Stack <char>s;
-        s.push('c');
-        s.push('b');
-        s.push('a');
+        // Stack <char>s;
+        // s.push('c');
+        // s.push('b');
+        // s.push('a');
+
+        Stack <string>s;
+        s.push("may");
+        s.push("june");
+        s.push("july");
+        
         while(!s.isEmpty()){
             cout<<s.top()<<endl;
             s.pop();
