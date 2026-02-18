@@ -24,6 +24,5 @@ class List{
 };
 int main(){
 List ll;
-
 return 0;
 }
