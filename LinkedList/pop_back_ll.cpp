@@ -96,6 +96,7 @@ class List{
     tail = temp;
 }
     void printList(){
+        //dyanamic memory allocation
         Node* temp = head;
         while(temp != NULL){
             cout << temp->data << "->";
@@ -104,6 +105,7 @@ class List{
         cout << "NULL\n" ;
     }
 };
+
 int main(){
 List ll;
 ll.push_front(3);  
