@@ -25,6 +25,12 @@ int main() {
     int n = 4;
 
     nextGreater(arr, n);
+    // Output: 5 25 25 -1
+    // Explanation:
+    // For 4, the next greater element is 5.
+    // For 5, the next greater element is 25.
+    // For 2, the next greater element is 25.
+    // For 25, there is no greater element to the right, so we print -
 
     return 0;
 }
