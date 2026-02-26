@@ -34,6 +34,21 @@ class List{
         }
     }
 
+    Node* merge(Node* left, Node* right){
+        if(left == NULL) return right;
+        if(right == NULL) return left;
+
+        Node* result = NULL;
+
+        if(left->data <= right->data){
+            result = left;
+            result->next = merge(left->next, right);
+        }else{
+            result = right;
+            result->next = merge(left, right->next);
+        }
+        return result;
+    }
     Node* splitAtMid(Node* head){
     Node* slow = head;
     Node* fast = head;
