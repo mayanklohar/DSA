@@ -20,6 +20,7 @@ int main()
     ll.push_front(2);
     ll.push_front(1);
     ll.push_back(4);
+    ll.push_back(5);
    
     printList(ll);
     cout << "Size of the list: " << ll.size() << endl;
