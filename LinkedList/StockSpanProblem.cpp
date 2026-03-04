@@ -23,9 +23,10 @@ void stockSpanProblem(vector<int> stock , vector<int> span){
         cout<<span[i]<<" ";
     }
 }
+// Time Complexity : O(n)
 int main(){
 vector<int> stock = {100, 80, 60, 70, 60, 75, 85};
-// vector<int> span(stock.size());
+
 vector<int> span={0,0,0,0,0,0,0};
 stockSpanProblem(stock , span);
 }
