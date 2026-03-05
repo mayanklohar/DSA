@@ -30,3 +30,9 @@ vector<int> stock = {100, 80, 60, 70, 60, 75, 85};
 vector<int> span={0,0,0,0,0,0,0};
 stockSpanProblem(stock , span);
 }
+//stock span problem is to find the number of consecutive days before 
+// the current day where the stock price was less than or equal to the current day's price. The above code uses a stack to keep track of the indices of the stock prices.
+//  For each day, it pops elements from the stack until it finds a price greater 
+// than the current day's price. 
+// The span for the current day is then calculated based on the index of the 
+// last higher price found in the stack.
