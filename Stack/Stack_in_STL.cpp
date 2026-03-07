@@ -6,6 +6,8 @@ int main(){
     s.push(1);
     s.push(2);
     s.push(3);
+    s.push(4);
+    cout<<"top element: "<<s.top()<<endl; // 4
 
     
     cout<<"stack size: "<<s.size()<<endl; // 3
