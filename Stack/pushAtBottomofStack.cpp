@@ -10,7 +10,7 @@ void pushAtBottom(stack<int> &s, int val){
     int temp = s.top();
     s.pop();
     pushAtBottom(s,val);
-    s.push(temp);
+    s.push(temp);   
 }
 int main(){
     stack<int> s;
@@ -31,4 +31,4 @@ int main(){
 
 // Time Complexity: O(n) where n is the number of elements in the stack
 // Space Complexity: O(n) due to recursive call stack in the worst case when the stack
-// is empty and we are pushing the new element at the bottom.
+// is empty and we are pushing the new element at the bottom
