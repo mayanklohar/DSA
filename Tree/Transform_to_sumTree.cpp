@@ -53,11 +53,32 @@ while(!Q.empty())
     if(curr->left!=NULL){
         Q.push(curr->left);
     }
-    if(curr->left!=NULL){
+    if(curr->right!=NULL){
         Q.push(curr->right);
     }
 }
 cout<<endl;
+}
+
+int transform(Node* root){
+    if(root==NULL){
+        return 0;
+    }
+
+    int leftOld=transform(root->left);
+    int rightOld=transform(root->right);
+    int currOld=root->data;
+
+    root->data=leftOld+rightOld;
+
+    if(root->left!=NULL){
+        root->data+=root->left->data;
+    }
+    if(root->right!=NULL){
+        root->data+=root->right->data;
+    }
+
+    return currOld;
 }
 
 
@@ -68,6 +89,8 @@ int main(){
 
     Node* root=buildTree(nodes);
 
+    transform(root);
+    cout<<"levelorder after transform to sum tree: "<<endl;
     levelorder(root);
     cout<<endl;
 
