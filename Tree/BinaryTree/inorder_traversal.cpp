@@ -47,6 +47,7 @@ int main(){
 
     Node* root=buildTree(nodes);
 
+    cout<<"Inorder Traversal of the tree is : ";
     inorder(root);
     cout<<endl;
 
