@@ -36,6 +36,8 @@ Node* buildBST(int arr[] , int n){
     return root;
 }
 
+//time complexity of search in BST is O(h) where h is height of tree. 
+// In worst case h can be n and in best case h can be log(n).
 bool search(Node* root , int key){
     if(root==NULL){
         return false;

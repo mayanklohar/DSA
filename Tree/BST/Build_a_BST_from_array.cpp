@@ -33,7 +33,7 @@ Node* buildBST(int arr[] , int n){
     for(int i=0;i<n;i++){
         root=insert(root,arr[i]);
     }
-    return root;
+        return root;
 }
 
 void inorder(Node* root){
