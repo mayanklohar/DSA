@@ -56,7 +56,7 @@ bool search(Node* root , int key){
 }
 
 int main(){
-    int arr[]={5,1,3,4,2,7};
+    int arr[]={5,1,3,4,2,7};  
     Node* root=buildBST(arr,6);
     cout<<search(root,4);
     cout<<endl;
