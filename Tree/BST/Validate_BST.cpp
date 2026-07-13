@@ -47,6 +47,7 @@ void inorder(Node* root){
     inorder(root->right);
 }
 
+
 bool validateHelper(Node* root , Node* min , Node* max){
     if(root==NULL){
         return true;
@@ -62,6 +63,13 @@ bool validateHelper(Node* root , Node* min , Node* max){
     return validateHelper(root->left , min , root) &&
     validateHelper(root->right , root , max);
 }
+
+//in this function we are passing the root node and the min and max values as NULL initially.
+//min and max will be updated as we traverse the tree. 
+// For the left subtree, the max value will be the current node, 
+// and for the right subtree, the min value will be the current node.
+//  This way, we ensure that all nodes in the left subtree are less
+//  than the current node and all nodes in the right subtree are greater than the current node. 
 
 bool validateBST(Node* root){
     return validateHelper(root , NULL , NULL);
