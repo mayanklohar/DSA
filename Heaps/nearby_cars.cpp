@@ -21,14 +21,14 @@ class Car{
 void nearbyCars(vector<pair<int,int>>pos , int K){
     vector<Car> cars;
 
-    for(int i=0 ; i<pos.size() ; i++){
+    for(int i=0 ; i<pos.size() ; i++){//O(n)
         int distSq=(pos[i].first*pos[i].first) + (pos[i].second*pos[i].second);
         cars.push_back(Car(i, distSq));
 
     }
     priority_queue<Car> pq (cars.begin() , cars.end());
 
-    for(int i=0 ; i<K ; i++){
+    for(int i=0 ; i<K ; i++){//O(klogn)
         cout<<"Car "<<pq.top().idx<<endl;
         pq.pop();
     }
