@@ -45,6 +45,8 @@ int main(){
 {1,1,1,1},
 {1,0,0,0},
 {1,0,0,0}};
-
+//1 represents the soldier 
 weakestSoldier(matrix,2);
 }
+
+//Time Complexity : O(N × M + K log N)
