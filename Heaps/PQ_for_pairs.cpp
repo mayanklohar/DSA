@@ -77,14 +77,6 @@ class Student{
         this->name=name;
         this->marks=marks;
     }
-
-    // bool operator < (const Student &obj) const{
-    //     return this->marks<obj.marks;
-    // }
-
-
-
-
 };
 
     struct ComparePair{
