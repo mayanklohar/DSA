@@ -14,6 +14,12 @@ class Node{
         next=NULL;
 
     }
+
+    ~Node(){
+        if(next!=NULL){
+            delete next;
+        }
+    }
 };
 
 class HashTable{
@@ -29,6 +35,34 @@ class HashTable{
             idx=idx+(key[i] * key[i] % totSize);
         }
         return idx;
+    }
+
+    void rehash(){
+        Node** oldTable=table;
+        int oldSize=totSize;
+
+        totSize=2*totSize;
+
+        table=new Node*[totSize];
+
+        for(int i=0 ; i<totSize ; i++){
+            table[i]=NULL;
+        }
+
+        for(int i=0 ; i<oldSize ; i++){
+            Node* temp=oldTable[i];
+
+            while(temp!=NULL){
+                insert(temp->key , temp->val);
+                temp=temp->next;
+            }
+            if(oldTable[i]!=NULL){
+                delete oldTable[i];
+            }
+
+        }
+
+        delete [] oldTable;
     }
 
     HashTable(int size=5){
@@ -50,6 +84,13 @@ class HashTable{
 
         newNode->next=head;
         head=newNode;
+
+        currSize++;
+
+        double lambda=currSize/(double)totSize;
+        if(lambda>1){
+            rehash();
+        }
     }
 };
 
