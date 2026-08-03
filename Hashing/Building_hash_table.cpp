@@ -34,7 +34,7 @@ class HashTable{
         for(int i=0 ; i<key.size() ; i++){
             idx=idx+(key[i] * key[i] % totSize);
         }
-        return idx;
+        return idx% totSize;
     }
 
     void rehash(){
@@ -42,7 +42,7 @@ class HashTable{
         int oldSize=totSize;
 
         totSize=2*totSize;
-
+        currSize=0;
         table=new Node*[totSize];
 
         for(int i=0 ; i<totSize ; i++){
@@ -82,8 +82,8 @@ class HashTable{
         Node* newNode=new Node(key,val);
         Node* head=table[idx];
 
-        newNode->next=head;
-        head=newNode;
+        newNode->next=table[idx];
+        table[idx]=newNode;
 
         currSize++;
 
@@ -92,9 +92,47 @@ class HashTable{
             rehash();
         }
     }
+
+    bool exists(string key){
+        int idx=hashFunction(key);
+        Node* temp=table[idx];
+
+        while(temp!=NULL){
+            if(temp->key==key){
+                return temp->val;
+            }
+            temp=temp->next;
+        }
+        return false;
+    }
+
+    int search(string key){
+        int idx=hashFunction(key);
+        Node* temp=table[idx];
+
+        while(temp!=NULL){
+            if(temp->key==key){
+                return temp->val;
+            }
+            temp=temp->next;
+        }
+        return -1;
+    }
 };
 
 int main(){
     HashTable ht;
+
+    ht.insert("India" , 100);
+    ht.insert("China" , 150);
+    ht.insert("USA" , 200);
+    ht.insert("UK" , 250);
+    ht.insert("Germany" , 300);
+    if(ht.exists("India")){
+        cout<<"India is present with value "<<ht.search("India")<<endl;
+    }
+    else{
+        cout<<"India is not present"<<endl;
+    }
     return 0;
 }
