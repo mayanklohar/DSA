@@ -94,6 +94,7 @@ class HashTable{
     }
 
     bool exists(string key){
+        
         int idx=hashFunction(key);
         Node* temp=table[idx];
 
@@ -107,6 +108,7 @@ class HashTable{
     }
 
     int search(string key){
+        //time complexity of search is O(1) in average case and O(n) in worst case
         int idx=hashFunction(key);
         Node* temp=table[idx];
 
