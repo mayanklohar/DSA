@@ -17,6 +17,17 @@ public:
         l[u].push_back(v);
         l[v].push_back(u);
     }
+
+    void print(){
+        for(int u=0 ; u<V ; u++){
+            list<int> neighbors=l[u];
+            cout<<"Vertex "<<u<<"->";
+            for(int v : neighbors){
+                cout<<v<<",";
+            }   
+            cout<<endl;
+        }
+    }
 };
 
     int main(){
@@ -27,6 +38,7 @@ public:
         graph.addEdge(1,3);
         graph.addEdge(2,3);
         graph.addEdge(2,4);
-        
+        graph.print();
+
         return 0;
     }
